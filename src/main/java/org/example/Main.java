@@ -1,5 +1,6 @@
 package org.example;
 
+import org.apache.commons.io.FileUtils;
 import org.eclipse.jgit.api.Git;
 import org.eclipse.jgit.api.errors.GitAPIException;
 
@@ -22,5 +23,7 @@ public class Main {
                 call();
 
         gitRepo.close();
+
+        FileUtils.deleteDirectory(rootPath.toFile());
     }
 }
